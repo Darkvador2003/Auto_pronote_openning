@@ -1,6 +1,12 @@
 from selenium import webdriver
 import time
 import os, hashlib, getpass
+try :
+    driver = webdriver.Chrome()
+except:
+    print("It seems that you have not correctly installed chromedriver\n \
+Lauching requirement.py\nIf requirement.py doesn't fix the issue, try to reinstall chromedriver")
+    os.system("python3 requirement.py")
 passphrase = getpass.getpass("Passphrase:  ")
 salt = b"{salt}" #Put the salt given by create_sha256_hashed_password.py
 key = b"{key}" #Put the key given by create_sha256_hashed_password.py
